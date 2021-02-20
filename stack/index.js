@@ -20,18 +20,18 @@ function integerDec2X(dec, x) {
 
 // 减积法
 function decimalDec2X(dec, x) {
-  let queen = [];
+  let queue = [];
   let result = ".";
   if (dec === 0) {
     return "";
   }
 
   while (dec !== 0 && result.length < 10) {
-    queen.push(~~(dec * x));
-    dec = dec * x - queen[queen.length - 1];
+    queue.push(~~(dec * x));
+    dec = dec * x - queue[queue.length - 1];
   }
 
-  while (queen.length > 0) {
+  while (queue.length > 0) {
     result += queen.shift();
   }
   return result;
